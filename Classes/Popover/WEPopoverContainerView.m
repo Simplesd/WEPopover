@@ -71,7 +71,7 @@ permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
 		UIImage *theImage = [UIImage imageNamed:properties.bgImageName];
 		bgImage = [theImage stretchableImageWithLeftCapWidth:properties.leftBgCapSize topCapHeight:properties.topBgCapSize];
 #endif		
-		//self.clipsToBounds = NO;	// DFH - if not set here will not support layer shadows
+		//self.clipsToBounds = NO;	// DFH - cannot get layer shadows if set to NO
 		self.userInteractionEnabled = YES;
 	}
 	return self;
@@ -113,7 +113,7 @@ permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
 
 - (void)setContentView:(UIView *)v {
 	if (v != contentView) {
-		[contentView removeFromSuperview]; // DFH
+		[contentView removeFromSuperview]; // DFH - old bug
 		contentView = v;		
 		contentView.frame = self.contentRect;		
 		[self addSubview:contentView];

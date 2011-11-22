@@ -2,7 +2,7 @@ This fork has several features, fixes, and options not in the original repositor
 
 - it's been ARCified
 
-- an image drawing routine can now draw the popup box with either a flat or gradient background. This makes it posssible to perfectly add an arrow to the rounded rect and put a border around it without getting pixel fractions. To get this add the define "-DDRAW_IMAGES" to your project define list or add to the pch file.
+- an image drawing routine can now draw the popup box with either a flat or gradient background. This makes it posssible to perfectly add an arrow to the rounded rect and put a border around it without getting pixel fractions. To get this add the define "-DDRAW_IMAGES" to your project define list or add to the pch file. The project has two schemes now (and two targets), one for the png images and the other for generated images.
 
 - see the DFH comment in WEPopoverTableViewController.m to force an orientation for testing.
 
