@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,6 +36,20 @@
 		749FAE861286130000AB97F9 /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 749FAE801286130000AB97F9 /* WEPopoverContainerView.m */; };
 		749FAE871286130000AB97F9 /* WEPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749FAE821286130000AB97F9 /* WEPopoverContentViewController.m */; };
 		749FAE881286130000AB97F9 /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749FAE841286130000AB97F9 /* WEPopoverController.m */; };
+		DE784E26147BE9D100852D83 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		DE784E27147BE9D100852D83 /* WEPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* WEPopoverViewController.xib */; };
+		DE784E38147BE9D100852D83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		DE784E39147BE9D100852D83 /* WEPopoverAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* WEPopoverAppDelegate.m */; };
+		DE784E3A147BE9D100852D83 /* WEPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* WEPopoverViewController.m */; };
+		DE784E3B147BE9D100852D83 /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 749FAE801286130000AB97F9 /* WEPopoverContainerView.m */; };
+		DE784E3C147BE9D100852D83 /* WEPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749FAE821286130000AB97F9 /* WEPopoverContentViewController.m */; };
+		DE784E3D147BE9D100852D83 /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749FAE841286130000AB97F9 /* WEPopoverController.m */; };
+		DE784E3E147BE9D100852D83 /* WEPopoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7496C86012D363AC00F93229 /* WEPopoverTableViewController.m */; };
+		DE784E3F147BE9D100852D83 /* WETouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463500013729C6F000EF936 /* WETouchableView.m */; };
+		DE784E40147BE9D100852D83 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 746B0A1C137454A000C5A8B5 /* UIBarButtonItem+WEPopover.m */; };
+		DE784E42147BE9D100852D83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		DE784E43147BE9D100852D83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		DE784E44147BE9D100852D83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +94,9 @@
 		749FAE841286130000AB97F9 /* WEPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEPopoverController.m; sourceTree = "<group>"; };
 		749FAE851286130000AB97F9 /* WEPopoverParentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverParentView.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* WEPopover-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WEPopover-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DE784E48147BE9D100852D83 /* WEPopoverDrawnImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEPopoverDrawnImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE784E4B147BE9D200852D83 /* WEPopover copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WEPopover copy-Info.plist"; path = "/Volumes/Data/git/WEPopover/WEPopover copy-Info.plist"; sourceTree = "<absolute>"; };
+		DE784E55147C524400852D83 /* README_DFH.txt */ = {isa = PBXFileReference; path = README_DFH.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +107,16 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE784E41147BE9D100852D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE784E42147BE9D100852D83 /* Foundation.framework in Frameworks */,
+				DE784E43147BE9D100852D83 /* UIKit.framework in Frameworks */,
+				DE784E44147BE9D100852D83 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* WEPopover.app */,
+				DE784E48147BE9D100852D83 /* WEPopoverDrawnImages.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,11 +151,13 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DE784E55147C524400852D83 /* README_DFH.txt */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				DE784E4B147BE9D200852D83 /* WEPopover copy-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -219,9 +249,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* WEPopover */ = {
+		1D6058900D05DD3D006BFB54 /* WEPopover (PNG) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "WEPopover" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "WEPopover (PNG)" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -231,9 +261,26 @@
 			);
 			dependencies = (
 			);
-			name = WEPopover;
+			name = "WEPopover (PNG)";
 			productName = WEPopover;
 			productReference = 1D6058910D05DD3D006BFB54 /* WEPopover.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE784E24147BE9D100852D83 /* WEPopover (Code Images) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE784E45147BE9D100852D83 /* Build configuration list for PBXNativeTarget "WEPopover (Code Images)" */;
+			buildPhases = (
+				DE784E25147BE9D100852D83 /* Resources */,
+				DE784E37147BE9D100852D83 /* Sources */,
+				DE784E41147BE9D100852D83 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WEPopover (Code Images)";
+			productName = WEPopover;
+			productReference = DE784E48147BE9D100852D83 /* WEPopoverDrawnImages.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -242,10 +289,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Werner IT Consultancy";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "WEPopover" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -258,7 +306,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* WEPopover */,
+				1D6058900D05DD3D006BFB54 /* WEPopover (PNG) */,
+				DE784E24147BE9D100852D83 /* WEPopover (Code Images) */,
 			);
 		};
 /* End PBXProject section */
@@ -288,6 +337,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE784E25147BE9D100852D83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE784E26147BE9D100852D83 /* MainWindow.xib in Resources */,
+				DE784E27147BE9D100852D83 /* WEPopoverViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -304,6 +362,22 @@
 				7496C86112D363AC00F93229 /* WEPopoverTableViewController.m in Sources */,
 				7463500113729C6F000EF936 /* WETouchableView.m in Sources */,
 				746B0A1D137454A000C5A8B5 /* UIBarButtonItem+WEPopover.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE784E37147BE9D100852D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE784E38147BE9D100852D83 /* main.m in Sources */,
+				DE784E39147BE9D100852D83 /* WEPopoverAppDelegate.m in Sources */,
+				DE784E3A147BE9D100852D83 /* WEPopoverViewController.m in Sources */,
+				DE784E3B147BE9D100852D83 /* WEPopoverContainerView.m in Sources */,
+				DE784E3C147BE9D100852D83 /* WEPopoverContentViewController.m in Sources */,
+				DE784E3D147BE9D100852D83 /* WEPopoverController.m in Sources */,
+				DE784E3E147BE9D100852D83 /* WEPopoverTableViewController.m in Sources */,
+				DE784E3F147BE9D100852D83 /* WETouchableView.m in Sources */,
+				DE784E40147BE9D100852D83 /* UIBarButtonItem+WEPopover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,11 +415,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,21 +430,50 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE784E46147BE9D100852D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WEPopover_Prefix.pch;
+				INFOPLIST_FILE = "WEPopover copy-Info.plist";
+				OTHER_CFLAGS = "-DDRAW_IMAGES";
+				PRODUCT_NAME = WEPopoverDrawnImages;
+			};
+			name = Debug;
+		};
+		DE784E47147BE9D100852D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WEPopover_Prefix.pch;
+				INFOPLIST_FILE = "WEPopover copy-Info.plist";
+				OTHER_CFLAGS = "-DDRAW_IMAGES";
+				PRODUCT_NAME = WEPopoverDrawnImages;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "WEPopover" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "WEPopover (PNG)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -384,6 +487,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE784E45147BE9D100852D83 /* Build configuration list for PBXNativeTarget "WEPopover (Code Images)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE784E46147BE9D100852D83 /* Debug */,
+				DE784E47147BE9D100852D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,32 +6,31 @@
 //  Copyright 2010 Werner IT Consultancy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 /**
  * @brief Properties for the container view determining the area where the actual content view can/may be displayed. Also Images can be supplied for the arrow images and background.
  */
-@interface WEPopoverContainerViewProperties : NSObject
-{
-	NSString *bgImageName;
-	NSString *upArrowImageName;
-	NSString *downArrowImageName;
-	NSString *leftArrowImageName;
-	NSString *rightArrowImageName;
-	CGFloat leftBgMargin;
-	CGFloat rightBgMargin;
-	CGFloat topBgMargin;
-	CGFloat bottomBgMargin;
-	NSInteger topBgCapSize;
-	NSInteger leftBgCapSize;
-	CGFloat arrowMargin;
-}
+ 
+ typedef struct {
+	CGColorRef topColor;
+	CGColorRef botColor;
+	CGColorRef lineColor;
+	CGSize size;		// image size
+	CGRect contentRect;	// returned parameter after image is drawn
+	CGFloat radius;
+	CGFloat borderWidth;
+	CGFloat calloutHeight;
+	CGFloat calloutRatio;		// width of base relative to height - default to 0.75f
+	UIPopoverArrowDirection direction;
+} popupSpec;
 
-@property(nonatomic, retain) NSString *bgImageName;
-@property(nonatomic, retain) NSString *upArrowImageName;
-@property(nonatomic, retain) NSString *downArrowImageName;
-@property(nonatomic, retain) NSString *leftArrowImageName;
-@property(nonatomic, retain) NSString *rightArrowImageName;
+@interface WEPopoverContainerViewProperties : NSObject
+#ifndef DRAW_IMAGES
+@property(nonatomic, strong) NSString *bgImageName;
+@property(nonatomic, strong) NSString *upArrowImageName;
+@property(nonatomic, strong) NSString *downArrowImageName;
+@property(nonatomic, strong) NSString *leftArrowImageName;
+@property(nonatomic, strong) NSString *rightArrowImageName;
+#endif
 @property(nonatomic, assign) CGFloat leftBgMargin;
 @property(nonatomic, assign) CGFloat rightBgMargin;
 @property(nonatomic, assign) CGFloat topBgMargin;
@@ -40,9 +39,17 @@
 @property(nonatomic, assign) CGFloat rightContentMargin;
 @property(nonatomic, assign) CGFloat topContentMargin;
 @property(nonatomic, assign) CGFloat bottomContentMargin;
+#ifndef DRAW_IMAGES
 @property(nonatomic, assign) NSInteger topBgCapSize;
 @property(nonatomic, assign) NSInteger leftBgCapSize;
 @property(nonatomic, assign) CGFloat arrowMargin;
+@property(nonatomic, assign) CGFloat arrowOffset;
+#endif
+@property(nonatomic, assign) BOOL useLayerShadows;
+
+#ifdef DRAW_IMAGES
+@property(nonatomic, assign) popupSpec spec;
+#endif
 
 @end
 
@@ -51,23 +58,7 @@
 /**
  * @brief Container/background view for displaying a popover view.
  */
-@interface WEPopoverContainerView : UIView {
-	UIImage *bgImage;
-	UIImage *arrowImage;
-	
-	WEPopoverContainerViewProperties *properties;
-	
-	UIPopoverArrowDirection arrowDirection;
-	
-	CGRect arrowRect;
-	CGRect bgRect;
-	CGPoint offset;
-	CGPoint arrowOffset;
-	
-	CGSize correctedSize;
-	UIView *contentView;
-}
-
+@interface WEPopoverContainerView : UIView
 /**
  * @brief The current arrow direction for the popover.
  */
@@ -76,7 +67,7 @@
 /**
  * @brief The content view being displayed.
  */
-@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, strong) UIView *contentView;
 
 /**
  * @brief Initializes the position of the popover with a size, anchor rect, display area and permitted arrow directions and optionally the properties. 

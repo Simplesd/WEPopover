@@ -6,16 +6,10 @@
 //  Copyright 2011 Werner IT Consultancy. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "WEPopoverController.h"
 
-@interface WEPopoverTableViewController : UITableViewController<WEPopoverControllerDelegate, UIPopoverControllerDelegate> {
-	WEPopoverController *popoverController;
-	NSInteger currentPopoverCellIndex;
-	Class popoverClass;
-}
-
-@property (nonatomic, retain) WEPopoverController *popoverController;
+@interface WEPopoverTableViewController : UITableViewController<WEPopoverControllerDelegate, UIPopoverControllerDelegate>
+@property (nonatomic, strong) WEPopoverController *popoverController;
 
 - (IBAction)showPopover:(id)sender;
 

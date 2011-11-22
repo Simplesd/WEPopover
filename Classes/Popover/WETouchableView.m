@@ -15,13 +15,10 @@
 @end
 
 @implementation WETouchableView
-
-@synthesize touchForwardingDisabled, delegate, passthroughViews;
-
-- (void)dealloc {
-	[passthroughViews release];
-	[super dealloc];
+{
+	BOOL testHits;
 }
+@synthesize touchForwardingDisabled, delegate, passthroughViews;
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 	if (testHits) {

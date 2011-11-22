@@ -11,7 +11,10 @@
 #import "UIBarButtonItem+WEPopover.h"
 
 @implementation WEPopoverTableViewController
-
+{
+	Class popoverClass;
+	NSInteger currentPopoverCellIndex;
+}
 @synthesize popoverController;
 
 #pragma mark -
@@ -103,7 +106,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell %d", indexPath.row];
@@ -151,12 +154,13 @@
 }
 */
 
+#ifndef DRAW_IMAGES
 /**
  Thanks to Paul Solt for supplying these background images and container view properties
  */
 - (WEPopoverContainerViewProperties *)improvedContainerViewProperties {
 	
-	WEPopoverContainerViewProperties *props = [[WEPopoverContainerViewProperties alloc] autorelease];
+	WEPopoverContainerViewProperties *props = [WEPopoverContainerViewProperties alloc];
 	NSString *bgImageName = nil;
 	CGFloat bgMargin = 0.0;
 	CGFloat bgCapSize = 0.0;
@@ -188,6 +192,7 @@
 	props.rightArrowImageName = @"popoverArrowRight.png";
 	return props;	
 }
+#endif
 
 #pragma mark -
 #pragma mark Table view delegate
@@ -205,17 +210,20 @@
 	if (shouldShowNewPopover) {
 		UIViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
 		CGRect frame = [tableView cellForRowAtIndexPath:indexPath].frame;
-		//double percentage =  (rand() / ((double)RAND_MAX));
+#if 1		
+		double percentage =  (rand() / ((double)RAND_MAX));
 		//double percentage = 0.95;
-		//CGRect rect = CGRectMake(frame.size.width * percentage, frame.origin.y, 1, frame.size.height); 
+		CGRect rect = CGRectMake(frame.size.width * percentage, frame.origin.y, 1, frame.size.height); 
+#else		
 		CGRect rect = frame;
-		
-		self.popoverController = [[[popoverClass alloc] initWithContentViewController:contentViewController] autorelease];
-		
+#endif		
+		self.popoverController = [[popoverClass alloc] initWithContentViewController:contentViewController];
+
+#ifndef DRAW_IMAGES		
 		if ([self.popoverController respondsToSelector:@selector(setContainerViewProperties:)]) {
 			[self.popoverController setContainerViewProperties:[self improvedContainerViewProperties]];
 		}
-		
+#endif		
 		self.popoverController.delegate = self;
 		
 		//Uncomment the line below to allow the table view to handle events while the popover is displayed.
@@ -225,12 +233,14 @@
 		
 		[self.popoverController presentPopoverFromRect:rect  
 												inView:self.view 
-							  permittedArrowDirections:(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown|
-														UIPopoverArrowDirectionLeft|UIPopoverArrowDirectionRight)
+							  permittedArrowDirections:
+#if 0 // nice place to force direction to test out changes // DFH
+														UIPopoverArrowDirectionRight // comment and uncomment for force direction
+#else
+														(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown|UIPopoverArrowDirectionLeft|UIPopoverArrowDirectionRight)
+#endif
 											  animated:YES];
 		currentPopoverCellIndex = indexPath.row;
-		
-		[contentViewController release];
 	}
 	
 }
@@ -243,7 +253,7 @@
 	if (!self.popoverController) {
 		
 		UIViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
-		self.popoverController = [[[popoverClass alloc] initWithContentViewController:contentViewController] autorelease];
+		self.popoverController = [[popoverClass alloc] initWithContentViewController:contentViewController];
 		self.popoverController.delegate = self;
 		self.popoverController.passthroughViews = [NSArray arrayWithObject:self.navigationController.navigationBar];
 		
@@ -251,7 +261,6 @@
 									   permittedArrowDirections:(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown) 
 													   animated:YES];
 		 
-		[contentViewController release];
 	} else {
 		[self.popoverController dismissPopoverAnimated:YES];
 		self.popoverController = nil;
@@ -281,11 +290,6 @@
     
     // Relinquish ownership any cached data, images, etc. that aren't in use.
 }
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end
 

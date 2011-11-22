@@ -6,8 +6,6 @@
 //  Copyright 2010 Werner IT Consultancy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @class WETouchableView;
 
 /**
@@ -22,15 +20,9 @@
 /**
  * @brief View that can handle touch events and/or disable touch forwording to child views
  */
-@interface WETouchableView : UIView {
-	BOOL touchForwardingDisabled;
-	id <WETouchableViewDelegate> delegate;
-	NSArray *passthroughViews;
-	BOOL testHits;
-}
-
+@interface WETouchableView : UIView
 @property (nonatomic, assign) BOOL touchForwardingDisabled;
-@property (nonatomic, assign) id <WETouchableViewDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <WETouchableViewDelegate> delegate;
 @property (nonatomic, copy) NSArray *passthroughViews;
 
 @end

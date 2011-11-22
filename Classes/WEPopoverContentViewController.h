@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface WEPopoverContentViewController : UITableViewController {
-
-}
+@interface WEPopoverContentViewController : UITableViewController
 
 @end
